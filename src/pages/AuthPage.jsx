@@ -1,4 +1,10 @@
+import Form from "../components/Form";
+
 const AuthPage = () => {
-  return <div>AuthPage</div>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 };
 export default AuthPage;
