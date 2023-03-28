@@ -4,15 +4,15 @@ const initialState = {
   theme: true,
 };
 
-const changeThemes = createSlice({
+const changeTheme = createSlice({
   name: "theme",
   initialState,
   reducers: {
-    changeTheme: (state, action) => {
+    isDay: (state, action) => {
       state.theme = action.payload;
     },
   },
 });
 
-export const { changeTheme } = changeThemes.actions;
-export default changeThemes;
+export const { isDay } = changeTheme.actions;
+export default changeTheme;
