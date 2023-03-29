@@ -1,9 +1,10 @@
-import { Button, Checkbox, Link, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import style from "./Form.module.scss";
 // ---------icons---------
 import HttpsIcon from "@mui/icons-material/Https";
 import EmailIcon from "@mui/icons-material/Email";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+
 const Form = () => {
   return (
     <div className={style.wrap}>
