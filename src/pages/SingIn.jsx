@@ -1,10 +1,10 @@
 import Form from "../components/Form/Form";
 
-const AuthPage = () => {
+const SingIn = () => {
   return (
     <div>
-      <Form />
+      <Form type="singIn" />
     </div>
   );
 };
-export default AuthPage;
+export default SingIn;

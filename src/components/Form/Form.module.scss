@@ -6,6 +6,7 @@
     background-color: rgba(255, 255, 255, 0.3);
     padding: 30px;
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 
     .imgAccount {
         width: 50px;
@@ -39,6 +40,7 @@
 
             &:hover {
                 color: rgba(255, 255, 255, 0.8);
+                transition: 0.2s;
             }
         }
     }
