@@ -1,13 +1,32 @@
+import { Button, Checkbox, Link, TextField } from "@mui/material";
+import style from "./Form.module.scss";
+// ---------icons---------
+import HttpsIcon from "@mui/icons-material/Https";
+import EmailIcon from "@mui/icons-material/Email";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 const Form = () => {
   return (
-    <div>
-      Form
-      <h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque
-        labore officiis assumenda delectus ipsam, dignissimos consequatur
-        quaerat unde sed tempore nobis consequuntur voluptatibus ad soluta ut
-        nihil aut. Dolores.
-      </h1>
+    <div className={style.wrap}>
+      <AccountCircleIcon className={style.imgAccount} />
+      <TextField
+        id="standard-basic"
+        label={<EmailIcon />}
+        variant="standard"
+        type="email"
+        className={style.itemInput}
+      />
+      <TextField
+        id="standard-basic"
+        label={<HttpsIcon />}
+        variant="standard"
+        type="password"
+        className={style.itemInput}
+      />
+
+      <Button variant="outlined" className={style.btn} color="inherit">
+        SING IN
+      </Button>
+      <div>DON'T HAVE AN ACCOUNT ?</div>
     </div>
   );
 };
