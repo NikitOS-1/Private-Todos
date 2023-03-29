@@ -4,6 +4,7 @@ import style from "./Form.module.scss";
 import HttpsIcon from "@mui/icons-material/Https";
 import EmailIcon from "@mui/icons-material/Email";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   return (
@@ -27,7 +28,9 @@ const Form = () => {
       <Button variant="outlined" className={style.btn} color="inherit">
         SING IN
       </Button>
-      <div>DON'T HAVE AN ACCOUNT ?</div>
+      <div className={style.singup}>
+        <span>DON'T HAVE AN ACCOUNT?</span> <Link to="/sing-up">SING UP</Link>
+      </div>
     </div>
   );
 };
