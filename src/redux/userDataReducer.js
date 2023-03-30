@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  email: "flkddfkldfkj",
-  id: "232",
-  tokken: "fdfdfddf",
+  email: null,
+  id: null,
+  tokken: null,
 };
 
 const data = createSlice({
   name: "userData",
   initialState,
-  reducers: {},
+  reducers: {
+    addDataUser: (state, action) => {
+      state.email = action.payload.email;
+      state.id = action.payload.id;
+      state.tokken = action.payload.tokken;
+    },
+  },
 });
 
-export const {} = data.actions;
+export const { addDataUser } = data.actions;
 export default data;
