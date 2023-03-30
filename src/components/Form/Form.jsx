@@ -38,7 +38,7 @@ const Form = ({ type, clickHandler }) => {
           variant="outlined"
           className={style.btn}
           color="inherit"
-          onClick={clickHandler(currentEmail, currentPass)}>
+          onClick={() => clickHandler(currentEmail, currentPass)}>
           SIGN IN
         </Button>
         <div className={style.signup}>

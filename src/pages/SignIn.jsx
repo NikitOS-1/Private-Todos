@@ -12,15 +12,15 @@ const SignIn = () => {
   const signIn = (email, pass) => {
     signInWithEmailAndPassword(auth, email, pass)
       .then((user) => {
-        console.log(user);
         dispatch(
           addDataUser({
             email: user.email,
             id: user.uid,
             tokken: user.refreshToken,
+            display: true,
           })
         );
-      })
+      }, location("/"))
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;

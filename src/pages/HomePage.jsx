@@ -13,20 +13,15 @@ const HomePage = () => {
   onAuthStateChanged(auth, (user) => {
     if (!user) {
       navigate("/login");
-    } else {
-      dispatch(
-        addDataUser({
-          email: user.email,
-          id: user.uid,
-          tokken: user.refreshToken,
-        })
-      );
     }
   });
   return (
     <div>
-      {!email ? <LinearProgress /> : email}
-      {id} <br />
+      {email}
+      <br />
+      {id}
+      <br />
+      {tokken}
     </div>
   );
 };

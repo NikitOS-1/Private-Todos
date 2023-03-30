@@ -4,6 +4,7 @@ const initialState = {
   email: null,
   id: null,
   tokken: null,
+  display: false,
 };
 
 const data = createSlice({
@@ -14,6 +15,7 @@ const data = createSlice({
       state.email = action.payload.email;
       state.id = action.payload.id;
       state.tokken = action.payload.tokken;
+      state.display = action.payload.display;
     },
   },
 });
