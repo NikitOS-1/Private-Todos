@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 import Form from "../components/Form/Form";
 import { addDataUser } from "../redux/userDataReducer";
 
-const SingIn = () => {
+const SignIn = () => {
   const dispatch = useDispatch();
   const location = useNavigate();
   const auth = getAuth();
 
-  const singIn = (email, pass) => {
+  const signIn = (email, pass) => {
     signInWithEmailAndPassword(auth, email, pass)
       .then((user) => {
         console.log(user);
@@ -20,7 +20,6 @@ const SingIn = () => {
             tokken: user.refreshToken,
           })
         );
-        location("/");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -31,8 +30,8 @@ const SingIn = () => {
 
   return (
     <div>
-      <Form type="singIn" clickHandler={singIn} />
+      <Form type="signIn" clickHandler={signIn} />
     </div>
   );
 };
-export default SingIn;
+export default SignIn;

@@ -5,6 +5,13 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .userInfo {
+        display: flex;
+    }
 }
 
 .show {

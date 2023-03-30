@@ -1,10 +1,10 @@
 import Form from "../components/Form/Form";
 
-const SingUp = () => {
+const SignUp = () => {
   return (
     <div>
       <Form type="singUp" />
     </div>
   );
 };
-export default SingUp;
+export default SignUp;

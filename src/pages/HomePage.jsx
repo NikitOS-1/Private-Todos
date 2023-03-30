@@ -10,7 +10,19 @@ const HomePage = () => {
   const navigate = useNavigate();
   const auth = getAuth();
   const { email, id, tokken } = useSelector((state) => state.userData);
-
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      navigate("/login");
+    } else {
+      dispatch(
+        addDataUser({
+          email: user.email,
+          id: user.uid,
+          tokken: user.refreshToken,
+        })
+      );
+    }
+  });
   return (
     <div>
       {!email ? <LinearProgress /> : email}

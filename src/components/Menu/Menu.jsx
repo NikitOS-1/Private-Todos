@@ -8,15 +8,14 @@ import { addDataUser } from "../../redux/userDataReducer";
 import style from "./Menu.module.scss";
 
 const Menu = () => {
-  const [display, setDisplay] = useState(Boolean);
-
+  const [display, setDisplay] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const auth = getAuth();
   const theme = useSelector((state) => state.theme.theme);
   const { email } = useSelector((state) => state.userData);
 
-  const handleChange = () => {
+  const handleChangeTheme = () => {
     theme ? dispatch(isDay(false)) : dispatch(isDay(true));
   };
 
@@ -34,23 +33,19 @@ const Menu = () => {
 
   return (
     <div className={style.menu}>
-      <Switch checked={theme} onChange={handleChange} color="default" />
-      <h3
-        className={[
-          // style["show"],
-          `${display ? style["show"] : style["hide"]}`,
-        ].join(" ")}>
-        Hello {email}!
-      </h3>
+      <Switch checked={theme} onChange={handleChangeTheme} color="default" />
+      <div className={style.userInfo}>
+        <h3
+          className={[`${display ? style["show"] : style["hide"]}`].join(" ")}>
+          Hello {email}!
+        </h3>
 
-      <Button
-        className={[
-          // style["show"],
-          `${display ? style["show"] : style["hide"]}`,
-        ].join(" ")}
-        onClick={exit}>
-        EXIT
-      </Button>
+        <Button
+          className={[`${display ? style["show"] : style["hide"]}`].join(" ")}
+          onClick={exit}>
+          Sign Out
+        </Button>
+      </div>
     </div>
   );
 };

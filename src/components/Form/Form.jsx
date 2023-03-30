@@ -13,7 +13,7 @@ const Form = ({ type, clickHandler }) => {
   const [currentEmail, setCurrentEmail] = useState("");
   const [currentPass, setCurrentPass] = useState("");
 
-  if (type == "singIn") {
+  if (type == "signIn") {
     return (
       <div className={style.wrap}>
         <AccountCircleIcon className={style.imgAccount} />
@@ -39,10 +39,10 @@ const Form = ({ type, clickHandler }) => {
           className={style.btn}
           color="inherit"
           onClick={clickHandler(currentEmail, currentPass)}>
-          SING IN
+          SIGN IN
         </Button>
-        <div className={style.singup}>
-          <span>DON'T HAVE AN ACCOUNT?</span> <Link to="/sing-up">SING UP</Link>
+        <div className={style.signup}>
+          <span>DON'T HAVE AN ACCOUNT?</span> <Link to="/sign-up">SIGN UP</Link>
         </div>
       </div>
     );
@@ -75,10 +75,10 @@ const Form = ({ type, clickHandler }) => {
           onChange={(e) => setCurrentPass(e.target.value)}
         />
         <Button variant="outlined" className={style.btn} color="inherit">
-          SING UP
+          SIGN UP
         </Button>
-        <div className={style.singup}>
-          <span>IF YOU HAVE AN ACCOUNT?</span> <Link to="/login">SING IN</Link>
+        <div className={style.signup}>
+          <span>IF YOU HAVE AN ACCOUNT?</span> <Link to="/login">SIGN IN</Link>
         </div>
       </div>
     );
