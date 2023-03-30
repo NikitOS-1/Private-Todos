@@ -5,24 +5,26 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import PersonIcon from "@mui/icons-material/Person";
 import { Button, TextField } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
 
 const Form = ({ type }) => {
   const dispatch = useDispatch();
+  const location = useNavigate();
   const [currentName, setCurrentName] = useState("");
   const [currentEmail, setCurrentEmail] = useState("");
   const [currentPass, setCurrentPass] = useState("");
 
   const auth = getAuth();
+  console.log(auth);
   const singIn = () => {
     signInWithEmailAndPassword(auth, currentEmail, currentPass)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-      })
+      }, location("/"))
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
