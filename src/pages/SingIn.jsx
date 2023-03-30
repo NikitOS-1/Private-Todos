@@ -11,8 +11,7 @@ const SingIn = () => {
 
   const singIn = (email, pass) => {
     signInWithEmailAndPassword(auth, email, pass)
-      .then((userCredential) => {
-        const user = userCredential.user;
+      .then((user) => {
         console.log(user);
         dispatch(
           addDataUser({
@@ -29,9 +28,10 @@ const SingIn = () => {
         console.log(errorCode + "" + errorMessage);
       });
   };
+
   return (
     <div>
-      <Form type="singIn" singIn={singIn} />
+      <Form type="singIn" clickHandler={singIn} />
     </div>
   );
 };

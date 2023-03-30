@@ -8,7 +8,7 @@ import { Button, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Form = ({ type, singIn }) => {
+const Form = ({ type, clickHandler }) => {
   const [currentName, setCurrentName] = useState("");
   const [currentEmail, setCurrentEmail] = useState("");
   const [currentPass, setCurrentPass] = useState("");
@@ -38,7 +38,7 @@ const Form = ({ type, singIn }) => {
           variant="outlined"
           className={style.btn}
           color="inherit"
-          onClick={singIn(currentEmail, currentPass)}>
+          onClick={clickHandler(currentEmail, currentPass)}>
           SING IN
         </Button>
         <div className={style.singup}>
