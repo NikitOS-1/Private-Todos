@@ -18,7 +18,6 @@ const Header = () => {
   };
 
   const exit = () => {
-    signOut(auth);
     dispatch(
       addDataUser({
         email: null,
@@ -27,6 +26,7 @@ const Header = () => {
         display: false,
       })
     );
+    signOut(auth);
   };
   return (
     <header className={style.wrap}>

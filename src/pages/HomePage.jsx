@@ -11,7 +11,9 @@ const HomePage = () => {
   const auth = getAuth();
   const { email, id, tokken } = useSelector((state) => state.userData);
   onAuthStateChanged(auth, (user) => {
-    if (!user) {
+    if (user) {
+    } else {
+      signOut(auth);
       navigate("/login");
     }
   });
