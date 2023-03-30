@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from "./themeReducer";
-import authReducer from "./authReducer";
+import userCredReducer from "./userCredReducer";
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer.reducer,
-    auth: authReducer.reducer,
+    auth: userCredReducer.reducer,
   },
 });
