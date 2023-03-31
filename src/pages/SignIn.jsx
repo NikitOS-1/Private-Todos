@@ -1,14 +1,15 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Form from "../components/Form/Form";
 import { addDataUser } from "../redux/userDataReducer";
 
 const SignIn = () => {
   const dispatch = useDispatch();
-  const location = useNavigate();
+  const navigate = useNavigate();
   const auth = getAuth();
-
+  const { email, id, tokken } = useSelector((state) => state.userData);
   const signIn = (email, pass) => {
     signInWithEmailAndPassword(auth, email, pass)
       .then((user) => {
@@ -20,14 +21,18 @@ const SignIn = () => {
             display: true,
           })
         );
-      }, location("/"))
+      })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode + "" + errorMessage);
       });
   };
-
+  useEffect(() => {
+    if (tokken) {
+      navigate("/");
+    }
+  }, [tokken]);
   return (
     <div>
       <Form type="signIn" clickHandler={signIn} />
