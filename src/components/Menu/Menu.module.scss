@@ -1,4 +1,4 @@
-.menu {
+.wraper {
     padding: 10px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
@@ -9,10 +9,68 @@
     align-items: center;
     justify-content: space-between;
 
-    .userInfo {
+    nav {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        color: #fff;
+        padding: 20px;
+
+        .hamburgerMenu {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+
+            .bar {
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+                transition: transform 0.2s ease-in-out;
+            }
+        }
+
+        .menu {
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.556);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: height 0.5s ease-in-out;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            left: 13px;
+            top: 78px;
+
+            li {
+                margin: 10px 0;
+                list-style-type: none;
+            }
+
+        }
+
+        .active {
+            display: block;
+
+        }
     }
 }
+
+.hamburgerMenu.active .bar:first-child {
+    transform: rotate(45deg) translate(2px, 3px);
+}
+
+.hamburgerMenu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerMenu.active .bar:last-child {
+    transform: rotate(-45deg) translate(2px, -3px);
+}
+
+
 
 .show {
     display: block;
