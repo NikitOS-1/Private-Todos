@@ -8,15 +8,22 @@ import { addDataUser } from "../redux/userDataReducer";
 const HomePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const auth = getAuth();
   const { email, id, tokken } = useSelector((state) => state.userData);
+  const auth = getAuth();
+  console.log(auth);
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      console.log(user);
     } else {
-      signOut(auth);
-      navigate("/login");
+      console.log("exit");
+      return navigate("/login");
     }
   });
+  // useEffect(() => {
+  //   if (currentUsers === null || undefined) {
+  //     return navigate("/login");
+  //   }
+  // }, []);
   return (
     <div>
       {email}
