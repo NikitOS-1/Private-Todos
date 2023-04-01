@@ -1,4 +1,5 @@
 import style from "./Footer.module.scss";
+
 const Footer = () => {
   console.log("FOOTER render");
   return (
@@ -7,4 +8,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;
