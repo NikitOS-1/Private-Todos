@@ -3,8 +3,10 @@ import Menu from "../../components/Menu/Menu";
 import { useDispatch, useSelector } from "react-redux";
 import { isDay } from "../../redux/themeReducer";
 import { useNavigate } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
 
 const Header = () => {
+  const auth = getAuth();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.theme);
@@ -12,7 +14,7 @@ const Header = () => {
     theme ? dispatch(isDay(false)) : dispatch(isDay(true));
   };
   const exit = () => {
-    console.log("exit");
+    signOut(auth);
     navigate("/login");
   };
 
