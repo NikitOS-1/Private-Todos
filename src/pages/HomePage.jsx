@@ -25,7 +25,6 @@ const HomePage = () => {
     <div>
       <h1>{email}</h1>
       <p>{id}</p>
-      <p>{tokken}</p>
     </div>
   );
 };

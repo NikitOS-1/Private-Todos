@@ -10,9 +10,11 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.theme);
+
   const handleChangeTheme = () => {
     theme ? dispatch(isDay(false)) : dispatch(isDay(true));
   };
+
   const exit = () => {
     signOut(auth);
     navigate("/login");
