@@ -5,25 +5,23 @@ import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Menu = ({ exit, handleChangeTheme }) => {
+  const [email, setEmail] = useState("");
   const theme = useSelector((state) => state.theme.theme);
   const auth = getAuth();
-  const redEmail = useSelector((state) => state.userData.email);
-  // const [email, setEmail] = useState(redEmail);
 
-  // useEffect(() => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setEmail(user.email);
-  //     } else {
-  //       setEmail(null);
-  //     }
-  //   });
-  // });
-  console.log("MENU render");
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setEmail(user.email);
+      } else {
+        setEmail(null);
+      }
+    });
+  });
   return (
     <div className={style.wraper}>
       <Switch checked={theme} onChange={handleChangeTheme} color="default" />
-      {redEmail}
+      {email}
       <Button onClick={exit}>Sign Out</Button>
     </div>
   );

@@ -1,5 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   status: null,
@@ -8,30 +7,8 @@ const initialState = {
   id: null,
   tokken: null,
 };
-export const onStatusChange = createAsyncThunk(
-  "userData/onStatusChange",
-  async () => {
-    const fetch = new Promise((resolve, reject) => {
-      const auth = getAuth();
-      onAuthStateChanged(
-        auth,
-        (user) => {
-          if (user) {
-            resolve(user.email);
-          } else {
-            reject("No user found.");
-          }
-        },
-        (error) => {
-          reject(error.message);
-        }
-      );
-    });
-    return fetch;
-  }
-);
 
-const currentUser = createSlice({
+const data = createSlice({
   name: "userData",
   initialState,
   reducers: {
@@ -39,23 +16,7 @@ const currentUser = createSlice({
       state.email = action.payload.email;
     },
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(onStatusChange.pending, (state) => {
-        state.error = null;
-        state.status = "loading";
-      })
-      .addCase(onStatusChange.fulfilled, (state, action) => {
-        state.error = null;
-        state.status = "resolved";
-        state.email = action.payload;
-      })
-      .addCase(onStatusChange.rejected, (state, action) => {
-        state.error = action.payload;
-        state.status = "error";
-      });
-  },
 });
 
-export const { addDataUser } = currentUser.actions;
-export default currentUser;
+export const { addDataUser } = data.actions;
+export default data;

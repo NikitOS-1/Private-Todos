@@ -1,7 +1,6 @@
 import style from "./Form.module.scss";
 import HttpsIcon from "@mui/icons-material/Https";
 import EmailIcon from "@mui/icons-material/Email";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import PersonIcon from "@mui/icons-material/Person";
 import { Button, TextField } from "@mui/material";

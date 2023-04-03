@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { isDay } from "../../redux/themeReducer";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
-import { addDataUser, onStatusChange } from "../../redux/userDataReducer";
 
 const Header = () => {
   const auth = getAuth();
@@ -18,11 +17,9 @@ const Header = () => {
 
   const exit = () => {
     signOut(auth);
-    dispatch(onStatusChange());
     navigate("/login");
   };
 
-  console.log("HEADER render");
   return (
     <header className={style.wrap}>
       <Menu exit={exit} handleChangeTheme={handleChangeTheme} />
