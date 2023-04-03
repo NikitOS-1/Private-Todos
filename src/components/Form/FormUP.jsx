@@ -43,7 +43,7 @@ const FormUP = ({ error, clickHandler }) => {
         onChange={(e) => setCurrentPass(e.target.value)}
       />
       <p style={{ color: "red", fontWeight: "900" }}>
-        {!error ? "" : "Invalid Email or Password."}
+        {!error ? "" : "You entered incorrect information"}
       </p>
       <Button
         variant="outlined"
