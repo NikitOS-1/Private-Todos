@@ -7,18 +7,17 @@ const initialState = {
   email: null,
   id: null,
   tokken: null,
-  data: null,
 };
 export const onStatusChange = createAsyncThunk(
   "userData/onStatusChange",
   async () => {
-    return new Promise((resolve, reject) => {
+    const fetch = new Promise((resolve, reject) => {
       const auth = getAuth();
       onAuthStateChanged(
         auth,
         (user) => {
           if (user) {
-            resolve(user);
+            resolve(user.email);
           } else {
             reject("No user found.");
           }
@@ -28,17 +27,16 @@ export const onStatusChange = createAsyncThunk(
         }
       );
     });
+    return fetch;
   }
 );
 
-const data = createSlice({
+const currentUser = createSlice({
   name: "userData",
   initialState,
   reducers: {
     addDataUser: (state, action) => {
       state.email = action.payload.email;
-      state.id = action.payload.id;
-      state.tokken = action.payload.tokken;
     },
   },
   extraReducers: (builder) => {
@@ -50,7 +48,7 @@ const data = createSlice({
       .addCase(onStatusChange.fulfilled, (state, action) => {
         state.error = null;
         state.status = "resolved";
-        state.data = action.payload.email;
+        state.email = action.payload;
       })
       .addCase(onStatusChange.rejected, (state, action) => {
         state.error = action.payload;
@@ -59,5 +57,5 @@ const data = createSlice({
   },
 });
 
-export const { addDataUser } = data.actions;
-export default data;
+export const { addDataUser } = currentUser.actions;
+export default currentUser;
