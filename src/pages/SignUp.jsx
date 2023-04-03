@@ -12,12 +12,12 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
-  const logout = (email, pass, user) => {
+  const register = (email, pass, user) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, pass)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
+        userCredential.user.displayName = user;
         if (user) {
           navigate("/");
         }
@@ -39,7 +39,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <FormUP error={error} clickHandler={logout} />{" "}
+      <FormUP error={error} clickHandler={register} />{" "}
     </div>
   );
 };
