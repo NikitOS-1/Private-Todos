@@ -4,12 +4,13 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import FormUP from "../components/Form/FormUP";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const auth = getAuth();
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const logout = (email, pass, user) => {
     const auth = getAuth();
@@ -17,11 +18,14 @@ const SignUp = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-      }, navigate("/"))
+        if (user) {
+          navigate("/");
+        }
+      })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode + " " + errorMessage);
+        setError(errorCode);
       });
   };
 
@@ -35,7 +39,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <FormUP clickHandler={logout} />{" "}
+      <FormUP error={error} clickHandler={logout} />{" "}
     </div>
   );
 };

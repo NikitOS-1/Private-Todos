@@ -7,7 +7,7 @@ import { Button, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const FormUP = ({ clickHandler }) => {
+const FormUP = ({ error, clickHandler }) => {
   const [currentName, setCurrentName] = useState("");
   const [currentEmail, setCurrentEmail] = useState("");
   const [currentPass, setCurrentPass] = useState("");
@@ -16,6 +16,7 @@ const FormUP = ({ clickHandler }) => {
     <div className={style.wrap}>
       <PersonAddAlt1Icon className={style.imgAccount} />
       <TextField
+        error={!error ? false : true}
         label={<PersonIcon />}
         variant="standard"
         type="text"
@@ -24,6 +25,7 @@ const FormUP = ({ clickHandler }) => {
         onChange={(e) => setCurrentName(e.target.value)}
       />
       <TextField
+        error={!error ? false : true}
         label={<EmailIcon />}
         variant="standard"
         type="email"
@@ -32,6 +34,7 @@ const FormUP = ({ clickHandler }) => {
         onChange={(e) => setCurrentEmail(e.target.value)}
       />
       <TextField
+        error={!error ? false : true}
         label={<HttpsIcon />}
         variant="standard"
         type="password"
@@ -39,6 +42,9 @@ const FormUP = ({ clickHandler }) => {
         value={currentPass}
         onChange={(e) => setCurrentPass(e.target.value)}
       />
+      <p style={{ color: "red", fontWeight: "900" }}>
+        {!error ? "" : "Invalid Email or Password."}
+      </p>
       <Button
         variant="outlined"
         className={style.btn}
