@@ -6,9 +6,10 @@ import { Button, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const FormIN = ({ clickHandler }) => {
+const FormIN = ({ error, clickHandler }) => {
   const [currentEmail, setCurrentEmail] = useState("");
   const [currentPass, setCurrentPass] = useState("");
+  console.log(error);
   return (
     <div className={style.wrap}>
       <AccountCircleIcon className={style.imgAccount} />

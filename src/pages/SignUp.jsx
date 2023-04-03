@@ -33,7 +33,6 @@ const SignUp = () => {
     });
   });
 
-  console.log("SIGNUP render");
   return (
     <div>
       <FormUP clickHandler={logout} />{" "}

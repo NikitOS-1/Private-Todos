@@ -4,7 +4,6 @@ import SignUp from "../../pages/SignUp";
 import HomePage from "../../pages/HomePage";
 
 const Main = () => {
-  console.log("MAIN render");
   return (
     <main>
       <Routes>

@@ -6,7 +6,6 @@ import Footer from "../Footer/Footer";
 
 function App() {
   const theme = useSelector((state) => state.theme.theme);
-  console.log("APP render");
   return (
     <div
       className={[

@@ -5,11 +5,12 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import FormIN from "../components/Form/FormIN";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const SignIn = () => {
   const auth = getAuth();
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const login = (email, pass) => {
     signInWithEmailAndPassword(auth, email, pass)
@@ -21,6 +22,7 @@ const SignIn = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode + " " + errorMessage);
+        setError(errorMessage);
       });
   };
 
@@ -33,11 +35,11 @@ const SignIn = () => {
       }
     });
   }, []);
-  console.log("SIGNIN render");
 
   return (
     <div>
-      <FormIN clickHandler={login} />
+      {error}
+      <FormIN error={error} clickHandler={login} />
     </div>
   );
 };
