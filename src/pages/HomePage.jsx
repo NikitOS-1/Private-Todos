@@ -22,12 +22,6 @@ const HomePage = () => {
     });
   });
 
-  return (
-    <div>
-      {tokken}
-      <h1>{email}</h1>
-      <p>{id}</p>
-    </div>
-  );
+  return <div>TODOS</div>;
 };
 export default HomePage;
