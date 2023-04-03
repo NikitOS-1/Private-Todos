@@ -25,7 +25,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Todos name={name} />
+      <Todos />
     </div>
   );
 };

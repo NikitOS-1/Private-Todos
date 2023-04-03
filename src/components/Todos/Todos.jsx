@@ -1,11 +1,9 @@
 import style from "./Todos.module.scss";
 
-const Todos = ({ name }) => {
+const Todos = () => {
   return (
     <div>
-      <h1>
-        Just do it. <span>{name}</span>
-      </h1>
+      <h1>Just do it.</h1>
     </div>
   );
 };

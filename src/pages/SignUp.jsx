@@ -17,7 +17,6 @@ const SignUp = () => {
     createUserWithEmailAndPassword(auth, email, pass)
       .then((userCredential) => {
         // Signed in
-        userCredential.user.displayName = user;
         if (user) {
           navigate("/");
         }
