@@ -50,7 +50,7 @@ const data = createSlice({
       .addCase(onStatusChange.fulfilled, (state, action) => {
         state.error = null;
         state.status = "resolved";
-        state.data = action.payload;
+        state.data = action.payload.email;
       })
       .addCase(onStatusChange.rejected, (state, action) => {
         state.error = action.payload;

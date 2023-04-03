@@ -11,7 +11,7 @@ const HomePage = () => {
   const [tokken, setTokken] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const data = useSelector((user) => user.userData.data.uid);
+  // const data = useSelector((user) => user.userData.data.uid);
   const auth = getAuth();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const HomePage = () => {
 
   return (
     <div>
-      {data}
+      {/* {data} */}
       <h1>{email}</h1>
       <p>{id}</p>
     </div>
