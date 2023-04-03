@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+// font-family: 'Poppins', sans-serif;
 * {
     box-sizing: border-box;
 }
@@ -11,13 +14,15 @@
     margin: 0 auto;
     width: 100%;
     height: max-content;
+    font-family: 'Poppins', sans-serif;
 }
 
 .day {
-    background: linear-gradient(to bottom right, rgba(244, 82, 133, 0.715), rgba(185, 82, 244, 0.715));
+    background: linear-gradient(to bottom right, rgba(244, 82, 133, 0.715), rgba(185, 82, 244, 0.8));
 }
 
 .night {
-    background: linear-gradient(to bottom right, rgba(84, 0, 32, 0.61), rgba(65, 0, 100, 0.715));
-    // color: white;rgba(61, 20, 84, 0.715)
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(74, 1, 50, 0.8));
+    color: white;
+
 }

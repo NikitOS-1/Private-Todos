@@ -31,7 +31,7 @@ const FormIN = ({ error, clickHandler }) => {
         value={currentPass}
         onChange={(e) => setCurrentPass(e.target.value)}
       />
-      <p style={{ color: "red" }}>
+      <p style={{ color: "red", fontWeight: "900" }}>
         {!error ? "" : "Invalid Email or Password."}
       </p>
       <Button
