@@ -21,8 +21,7 @@ const SignIn = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode + " " + errorMessage);
-        setError(errorMessage);
+        setError(errorCode);
       });
   };
 
@@ -38,7 +37,6 @@ const SignIn = () => {
 
   return (
     <div>
-      {error}
       <FormIN error={error} clickHandler={login} />
     </div>
   );

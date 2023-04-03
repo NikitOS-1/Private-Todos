@@ -9,11 +9,12 @@ import { useState } from "react";
 const FormIN = ({ error, clickHandler }) => {
   const [currentEmail, setCurrentEmail] = useState("");
   const [currentPass, setCurrentPass] = useState("");
-  console.log(error);
+
   return (
     <div className={style.wrap}>
       <AccountCircleIcon className={style.imgAccount} />
       <TextField
+        error={!error ? false : true}
         label={<EmailIcon />}
         variant="standard"
         type="email"
@@ -23,13 +24,16 @@ const FormIN = ({ error, clickHandler }) => {
       />
       <TextField
         label={<HttpsIcon />}
+        error={!error ? false : true}
         variant="standard"
         type="password"
         className={style.itemInput}
         value={currentPass}
         onChange={(e) => setCurrentPass(e.target.value)}
       />
-
+      <p style={{ color: "red" }}>
+        {!error ? "" : "Invalid Email or Password."}
+      </p>
       <Button
         variant="outlined"
         className={style.btn}
