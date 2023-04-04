@@ -9,7 +9,7 @@ const todos = createSlice({
   initialState,
   reducers: {
     addTask: (state, action) => {
-      state.tasks.unshift({
+      state.tasks.push({
         id: action.payload.id,
         title: action.payload.title,
         completed: action.payload.completed,

@@ -21,11 +21,10 @@ const ItemTask = ({ id, completed, title }) => {
   return (
     <div>
       <Checkbox
-        checked={completed}
+        checked={isCompleted}
         onChange={(e) => setIsCompleted(e.target.checked)}
       />
       {title}
-      <DeleteIcon />
     </div>
   );
 };
