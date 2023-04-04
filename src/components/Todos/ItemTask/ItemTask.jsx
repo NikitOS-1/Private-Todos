@@ -6,9 +6,8 @@ import { useDispatch } from "react-redux";
 import { addTask, changeStatus } from "../../../redux/todoReducer";
 
 const ItemTask = ({ id, completed, title }) => {
-  const [isCompleted, setIsCompleted] = useState(false);
-
   const dispatch = useDispatch();
+  const [isCompleted, setIsCompleted] = useState(false);
 
   useEffect(() => {
     dispatch(
@@ -22,7 +21,7 @@ const ItemTask = ({ id, completed, title }) => {
   return (
     <div>
       <Checkbox
-        checked={isCompleted}
+        checked={completed}
         onChange={(e) => setIsCompleted(e.target.checked)}
       />
       {title}
