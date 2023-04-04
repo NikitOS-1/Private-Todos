@@ -7,7 +7,13 @@ const SetTask = () => {
   const dispatch = useDispatch();
 
   const addTodos = () => {
-    dispatch(addTask(value));
+    dispatch(
+      addTask({
+        id: Math.floor(Math.random() * 999999999),
+        title: value,
+        completed: false,
+      })
+    );
     setValue("");
   };
 
