@@ -10,19 +10,21 @@ const ItemTask = ({ id, completed, title }) => {
 
   const dispatch = useDispatch();
 
-  const handleChange = () => {
-    setIsCompleted(completed);
+  useEffect(() => {
     dispatch(
       changeStatus({
         id: id,
         completed: isCompleted,
       })
     );
-  };
-  console.log(isCompleted);
+  }, [isCompleted]);
+
   return (
     <div>
-      <Checkbox checked={isCompleted} che onChange={handleChange} />
+      <Checkbox
+        checked={isCompleted}
+        onChange={(e) => setIsCompleted(e.target.checked)}
+      />
       {title}
       <DeleteIcon />
     </div>
