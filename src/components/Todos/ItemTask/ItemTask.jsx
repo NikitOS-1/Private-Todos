@@ -15,14 +15,14 @@ const ItemTask = ({ id, completed, title }) => {
     dispatch(
       changeStatus({
         id: id,
-        completed: true,
+        completed: isCompleted,
       })
     );
   };
   console.log(isCompleted);
   return (
     <div>
-      <Checkbox checked={isCompleted} onChange={handleChange} />
+      <Checkbox checked={isCompleted} che onChange={handleChange} />
       {title}
       <DeleteIcon />
     </div>
