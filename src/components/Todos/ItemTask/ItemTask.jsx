@@ -1,7 +1,8 @@
 import { Checkbox } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import style from "./ItemTask.module.scss";
 
-const ItemTodo = ({ task }) => {
+const ItemTask = ({ task }) => {
   return (
     <div>
       <Checkbox />
@@ -10,4 +11,4 @@ const ItemTodo = ({ task }) => {
     </div>
   );
 };
-export default ItemTodo;
+export default ItemTask;
