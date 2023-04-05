@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../../redux/todoReducer";
+import { Fab } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import style from "./SetTask.module.scss";
 
 const SetTask = () => {
   const [value, setValue] = useState("");
@@ -18,18 +21,18 @@ const SetTask = () => {
   };
 
   return (
-    <div>
-      <div>
-        <input
-          type="text"
-          placeholder="Add a task."
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-          value={value}
-        />
-        <button onClick={addTodos}>Add</button>
-      </div>
+    <div className={style.wrap}>
+      <input
+        type="text"
+        placeholder="Add a task."
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+        value={value}
+      />
+      <Fab color="primary" aria-label="add" onClick={addTodos}>
+        <AddIcon />
+      </Fab>
     </div>
   );
 };

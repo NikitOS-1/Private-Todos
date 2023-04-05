@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTask } from "../../redux/todoReducer";
 import SetTask from "./SetTask/SetTask";
 import DescTask from "./DescTask/DescTask";
+import TotalTask from "./TotalTask/TotalTask";
 
 const Todos = () => {
   const todo = useSelector((state) => state.todo.tasks);
@@ -29,6 +30,7 @@ const Todos = () => {
           />
         </div>
       ))}
+      <TotalTask />
     </div>
   );
 };
