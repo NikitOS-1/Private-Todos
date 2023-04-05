@@ -1,0 +1,22 @@
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    width: 535px;
+    height: auto;
+
+    .check {
+        margin: 5px;
+    }
+
+    .title {
+        margin: 10px;
+    }
+
+    .btnDel {
+        margin: 5px;
+    }
+}
