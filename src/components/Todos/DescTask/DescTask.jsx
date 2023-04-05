@@ -1,8 +1,8 @@
-const DescTask = () => {
+const DescTask = ({ changeStatusOn }) => {
   return (
     <div>
-      <button>Active</button>
-      <button>Completed</button>
+      <button onClick={() => changeStatusOn("active")}>Active</button>
+      <button onClick={() => changeStatusOn("completed")}>Completed</button>
     </div>
   );
 };
