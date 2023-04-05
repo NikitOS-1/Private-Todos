@@ -27,7 +27,7 @@ const ItemTask = ({ id, completed, title, status }) => {
             checked={isCompleted}
             onChange={(e) => setIsCompleted(e.target.checked)}
           />
-          <p className={style.title}>{title}</p>
+          <p className={style.lineThrough}>{title}</p>
           <Tooltip
             title="Delete"
             className={style.btnDel}

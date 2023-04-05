@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import moment from "moment";
 
 const initialState = {
-  theme: false,
+  theme: true,
 };
 
 const changeTheme = createSlice({
