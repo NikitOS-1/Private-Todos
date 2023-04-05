@@ -1,4 +1,4 @@
-import { Checkbox, Fab } from "@mui/material";
+import { Checkbox, Fab, IconButton, Tooltip } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import style from "./ItemTask.module.scss";
 import { useEffect, useState } from "react";
@@ -21,24 +21,36 @@ const ItemTask = ({ id, completed, title, status }) => {
   if (status === "completed") {
     if (isCompleted === true) {
       return (
-        <div>
+        <div className={style.wrap}>
           <Checkbox
+            className={style.check}
             checked={isCompleted}
             onChange={(e) => setIsCompleted(e.target.checked)}
           />
-          {title}
+          <p className={style.title}>{title}</p>
+          <Tooltip title="Delete" className={style.btnDel}>
+            <IconButton>
+              <DeleteIcon />
+            </IconButton>
+          </Tooltip>
         </div>
       );
     }
   } else if (status === "active") {
     if (isCompleted === false) {
       return (
-        <div>
+        <div className={style.wrap}>
           <Checkbox
+            className={style.check}
             checked={isCompleted}
             onChange={(e) => setIsCompleted(e.target.checked)}
           />
-          {title}
+          <p className={style.title}>{title}</p>
+          <Tooltip title="Delete" className={style.btnDel}>
+            <IconButton>
+              <DeleteIcon />
+            </IconButton>
+          </Tooltip>
         </div>
       );
     }
