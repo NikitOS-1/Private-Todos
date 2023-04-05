@@ -1,18 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  tasks: [
-    {
-      id: 1,
-      title: "Start project",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Start project 2-0 skdsjjdjskjdjks d kjsjksjkd",
-      completed: false,
-    },
-  ],
+  tasks: [],
 };
 
 const todos = createSlice({
