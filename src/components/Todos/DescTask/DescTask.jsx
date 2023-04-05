@@ -3,10 +3,11 @@ import style from "./DescTask.module.scss";
 import { useState } from "react";
 
 const DescTask = ({ changeStatusOn }) => {
-  const [value, setValue] = useState(2);
+  const [value, setValue] = useState(1);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <div className={style.wrap}>
       <Tabs className={style.cont} value={value} onChange={handleChange}>
