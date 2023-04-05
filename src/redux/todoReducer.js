@@ -26,7 +26,7 @@ const todos = createSlice({
       const index = state.tasks.findIndex(
         (task) => task.id === action.payload.id
       );
-      state.tasks.splice(index, 1);
+      state.tasks.splice(index - 1, 1);
     },
   },
 });

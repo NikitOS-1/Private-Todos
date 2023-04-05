@@ -9,69 +9,53 @@
     align-items: center;
     justify-content: space-between;
 
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: transparent;
-        color: #fff;
-        padding: 20px;
+    .hidenMenu {
+        .icon {
+            display: block;
+            width: 50px;
+            height: 50px;
+            padding: 5px;
+        }
 
-        .hamburgerMenu {
-            width: 30px;
-            height: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-
-            .bar {
-                width: 100%;
-                height: 3px;
-                background-color: #fff;
-                transition: transform 0.2s ease-in-out;
-            }
+        &:hover .menu {
+            display: block;
         }
 
         .menu {
-            display: none;
-            border: 1px solid rgba(255, 255, 255, 0.556);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: height 0.5s ease-in-out;
+            z-index: 999;
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.3);
-            left: 13px;
-            top: 78px;
+            top: 64px;
+            right: 13px;
+            display: none;
+            width: max-content;
+            height: max-content;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
 
-            li {
-                margin: 10px 0;
-                list-style-type: none;
+
+            &:hover {
+                display: block;
             }
 
-        }
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
 
-        .active {
-            display: block;
-
+                li {
+                    padding: 5px;
+                    list-style: none;
+                    margin-right: 40px;
+                }
+            }
         }
     }
 }
 
-.hamburgerMenu.active .bar:first-child {
-    transform: rotate(45deg) translate(2px, 3px);
-}
-
-.hamburgerMenu.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburgerMenu.active .bar:last-child {
-    transform: rotate(-45deg) translate(2px, -3px);
-}
-
-
-
+// -----------------------------
 .show {
     display: block;
 }
