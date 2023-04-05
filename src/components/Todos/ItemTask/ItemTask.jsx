@@ -3,7 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import style from "./ItemTask.module.scss";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTask, changeStatus } from "../../../redux/todoReducer";
+import { addTask, changeStatus, deleteTask } from "../../../redux/todoReducer";
 
 const ItemTask = ({ id, completed, title, status }) => {
   const dispatch = useDispatch();
@@ -28,7 +28,10 @@ const ItemTask = ({ id, completed, title, status }) => {
             onChange={(e) => setIsCompleted(e.target.checked)}
           />
           <p className={style.title}>{title}</p>
-          <Tooltip title="Delete" className={style.btnDel}>
+          <Tooltip
+            title="Delete"
+            className={style.btnDel}
+            onClick={() => dispatch(deleteTask(id))}>
             <IconButton>
               <DeleteIcon />
             </IconButton>
@@ -46,7 +49,10 @@ const ItemTask = ({ id, completed, title, status }) => {
             onChange={(e) => setIsCompleted(e.target.checked)}
           />
           <p className={style.title}>{title}</p>
-          <Tooltip title="Delete" className={style.btnDel}>
+          <Tooltip
+            title="Delete"
+            className={style.btnDel}
+            onClick={() => dispatch(deleteTask(id))}>
             <IconButton>
               <DeleteIcon />
             </IconButton>

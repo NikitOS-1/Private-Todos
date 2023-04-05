@@ -11,6 +11,7 @@ import moment from "moment";
 const Todos = () => {
   const todo = useSelector((state) => state.todo.tasks);
   const [status, setStatus] = useState("active");
+  const [countTask, setCountTask] = useState(0);
 
   const changeStatusOn = (status) => {
     setStatus(status);

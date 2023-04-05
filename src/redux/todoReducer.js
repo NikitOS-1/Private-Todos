@@ -9,8 +9,7 @@ const initialState = {
     },
     {
       id: 2,
-      title:
-        "Start project 2-0 skdsjjdjskjdjks djjskdjjskjdskjs djkdjkskdskjsdjkdsjksdj kjsdkjksdjksjkdsjks jkdsjks djksdjksdjksdkjdjksjdjskjd kjsjksjkd",
+      title: "Start project 2-0 skdsjjdjskjdjks d kjsjksjkd",
       completed: false,
     },
   ],
@@ -34,8 +33,14 @@ const todos = createSlice({
         }
       });
     },
+    deleteTask: (state, action) => {
+      const index = state.tasks.findIndex(
+        (task) => task.id === action.payload.id
+      );
+      state.tasks.splice(index, 1);
+    },
   },
 });
 
-export const { addTask, changeStatus } = todos.actions;
+export const { addTask, changeStatus, deleteTask } = todos.actions;
 export default todos;

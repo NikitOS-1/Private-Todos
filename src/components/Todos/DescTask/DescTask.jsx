@@ -13,13 +13,13 @@ const DescTask = ({ changeStatusOn }) => {
       <Tabs className={style.cont} value={value} onChange={handleChange}>
         <Tab
           className={style.btnAct}
-          label="Active"
-          onClick={() => changeStatusOn("active")}
+          label="Completed"
+          onClick={() => changeStatusOn("completed")}
         />
         <Tab
           className={style.btnCompl}
-          label="Completed"
-          onClick={() => changeStatusOn("completed")}
+          label="Active"
+          onClick={() => changeStatusOn("active")}
         />
       </Tabs>
     </div>
