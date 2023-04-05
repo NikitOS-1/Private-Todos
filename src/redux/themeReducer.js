@@ -11,11 +11,6 @@ const changeTheme = createSlice({
   reducers: {
     isDay: (state, action) => {
       state.theme = action.payload;
-      if (moment().format("a") === "pm") {
-        state.theme = false;
-      } else {
-        state.theme = true;
-      }
     },
   },
 });

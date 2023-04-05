@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { isDay } from "../../redux/themeReducer";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
+import { useEffect } from "react";
+import moment from "moment";
 
 const Header = () => {
   const auth = getAuth();
@@ -14,6 +16,14 @@ const Header = () => {
   const handleChangeTheme = () => {
     theme ? dispatch(isDay(false)) : dispatch(isDay(true));
   };
+
+  useEffect(() => {
+    if (moment().format("a") === "pm") {
+      dispatch(isDay(false));
+    } else {
+      dispatch(isDay(true));
+    }
+  }, []);
 
   const exit = () => {
     signOut(auth);
