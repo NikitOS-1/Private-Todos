@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 const SignIn = () => {
   const auth = getAuth();
   const navigate = useNavigate();
+  const d = useNavigate();
   const [error, setError] = useState("");
 
   const login = (email, pass) => {
