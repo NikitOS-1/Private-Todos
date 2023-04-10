@@ -2,12 +2,13 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.1);
-    width: 100%;
+    width: 400px;
     height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0 auto;
 
     h1 {
         margin-bottom: 10px;
@@ -18,3 +19,29 @@
         }
     }
 }
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    .container {}
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {}
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/* Iphone 5 */
+@media (max-width: 320px) {}
