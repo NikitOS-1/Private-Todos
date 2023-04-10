@@ -10,14 +10,18 @@ const SetTask = () => {
   const dispatch = useDispatch();
 
   const addTodos = () => {
-    dispatch(
-      addTask({
-        id: Math.floor(Math.random() * 9999999999),
-        title: value,
-        completed: false,
-      })
-    );
-    setValue("");
+    if (value == "" || " ") {
+      return;
+    } else {
+      dispatch(
+        addTask({
+          id: Math.floor(Math.random() * 9999999999),
+          title: value,
+          completed: false,
+        })
+      );
+      setValue("");
+    }
   };
 
   return (
@@ -30,7 +34,11 @@ const SetTask = () => {
         }}
         value={value}
       />
-      <Fab color="primary" aria-label="add" onClick={addTodos}>
+      <Fab
+        color="primary"
+        aria-label="add"
+        onClick={addTodos}
+        className={style.btnAdd}>
         <AddIcon />
       </Fab>
     </div>
