@@ -33,8 +33,42 @@ const Menu = ({ exit, handleChangeTheme }) => {
           <ul>
             <li>{status ? "You are logged in as: " + email : ""}</li>
             <li>{status ? <Button onClick={exit}>Sign Out</Button> : ""}</li>
-            <li>{status ? "" : <Link to="/login">SIGN IN</Link>}</li>
-            <li>{status ? "" : <Link to="/sign-up">SIGN UP</Link>}</li>
+            <li>
+              {status ? (
+                ""
+              ) : (
+                <Button variant="contained">
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      width: "100px",
+                      height: "auto",
+                    }}
+                    to="/login">
+                    SIGN IN
+                  </Link>
+                </Button>
+              )}
+            </li>
+            <li>
+              {status ? (
+                ""
+              ) : (
+                <Button variant="contained">
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      width: "100px",
+                      height: "auto",
+                    }}
+                    to="/sign-up">
+                    SIGN UP
+                  </Link>
+                </Button>
+              )}
+            </li>
           </ul>
         </div>
       </div>
