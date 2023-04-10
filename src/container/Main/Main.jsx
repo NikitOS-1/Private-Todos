@@ -5,7 +5,7 @@ import HomePage from "../../pages/HomePage";
 
 const Main = () => {
   return (
-    <main>
+    <main style={{ width: "100%" }}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<SignIn />} />
