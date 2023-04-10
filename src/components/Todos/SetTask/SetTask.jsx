@@ -10,7 +10,7 @@ const SetTask = () => {
   const dispatch = useDispatch();
 
   const addTodos = () => {
-    if (value == "" || " ") {
+    if (value == "") {
       return;
     } else {
       dispatch(
