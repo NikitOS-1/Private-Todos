@@ -22,6 +22,7 @@ const Todos = () => {
     <div className={style.container}>
       <h1>
         Just do it <span>.</span>
+        Just do it <span>.</span>
       </h1>
       <h3>{`${dayWeek}   ${MMDYY}`}</h3>
       <SetTask />
