@@ -25,7 +25,7 @@ const Todos = () => {
       <h3>{`${currentDayWeek}   ${currentMMDYY}`}</h3>
       <SetTask />
       <DescTask changeStatusOn={changeStatusOn} />
-      {todo.map((i, o) => (
+      {/* {todo.map((i, o) => (
         <div key={o}>
           <ItemTask
             id={i.id}
@@ -34,7 +34,7 @@ const Todos = () => {
             status={status}
           />
         </div>
-      ))}
+      ))} */}
       <TotalTask />
     </div>
   );
