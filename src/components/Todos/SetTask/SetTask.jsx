@@ -7,6 +7,7 @@ import style from "./SetTask.module.scss";
 
 const SetTask = () => {
   const [value, setValue] = useState("");
+  const [id, setId] = useState(1);
   const dispatch = useDispatch();
 
   const addTodos = () => {
@@ -15,12 +16,13 @@ const SetTask = () => {
     } else {
       dispatch(
         addTask({
-          id: Math.floor(Math.random() * 9999999999),
+          id: id,
           title: value,
           completed: false,
         })
       );
       setValue("");
+      setId((prev) => prev + 1);
     }
   };
 
