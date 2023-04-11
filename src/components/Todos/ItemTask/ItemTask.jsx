@@ -17,7 +17,7 @@ const ItemTask = ({ id, completed, title }) => {
         completed: isCompleted,
       })
     );
-  }, [isCompleted, dispatch, id]);
+  }, [isCompleted]);
 
   if (!filter && !completed) {
     return (
