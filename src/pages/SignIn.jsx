@@ -14,13 +14,9 @@ const SignIn = () => {
 
   const login = (email, pass) => {
     signInWithEmailAndPassword(auth, email, pass)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-      })
+      .then(() => {})
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
         setError(errorCode);
       });
   };
@@ -33,7 +29,7 @@ const SignIn = () => {
         navigate("/login");
       }
     });
-  }, []);
+  }, [auth, navigate]);
 
   return (
     <div>

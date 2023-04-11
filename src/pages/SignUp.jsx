@@ -15,15 +15,13 @@ const SignUp = () => {
   const register = (email, pass, user) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, pass)
-      .then((userCredential) => {
-        // Signed in
+      .then(() => {
         if (user) {
           navigate("/");
         }
       })
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
         setError(errorCode);
       });
   };
