@@ -1,9 +1,12 @@
 import { Tab, Tabs } from "@mui/material";
 import style from "./DescTask.module.scss";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { filter } from "../../../redux/filterTodoReducer";
 
-const DescTask = ({ changeStatusOn }) => {
+const DescTask = () => {
   const [value, setValue] = useState(1);
+  const dispatch = useDispatch();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -14,12 +17,12 @@ const DescTask = ({ changeStatusOn }) => {
         <Tab
           className={style.btnCompl}
           label="Completed"
-          onClick={() => changeStatusOn(true)}
+          onClick={() => dispatch(filter(true))}
         />
         <Tab
           className={style.btnAct}
           label="Active"
-          onClick={() => changeStatusOn(false)}
+          onClick={() => dispatch(filter(false))}
         />
       </Tabs>
     </div>
