@@ -10,20 +10,19 @@ import moment from "moment";
 const Todos = () => {
   const todo = useSelector((state) => state.todo.tasks);
   const [status, setStatus] = useState("active");
-
   const changeStatusOn = (status) => {
     setStatus(status);
   };
 
-  let dayWeek = moment().format("dddd");
-  let MMDYY = moment().format("MMM Do YY");
+  let currentDayWeek = moment().format("dddd");
+  let currentMMDYY = moment().format("MMM Do YY");
 
   return (
     <div className={style.container}>
       <h1>
         Just do it <span>.</span>
       </h1>
-      <h3>{`${dayWeek}   ${MMDYY}`}</h3>
+      <h3>{`${currentDayWeek}   ${currentMMDYY}`}</h3>
       <SetTask />
       <DescTask changeStatusOn={changeStatusOn} />
       {todo.map((i, o) => (

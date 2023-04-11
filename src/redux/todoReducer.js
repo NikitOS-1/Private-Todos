@@ -16,17 +16,16 @@ const todos = createSlice({
       });
     },
     changeStatus: (state, action) => {
-      state.tasks.find((task) => {
-        if (task.id === action.payload.id) {
-          task.completed = action.payload.completed;
-        }
-      });
+      const task = state.tasks.find((task) => task.id === action.payload.id);
+      if (task) {
+        task.completed = action.payload.completed;
+      }
     },
     deleteTask: (state, action) => {
-      const index = state.tasks.findIndex(
-        (task) => task.id === action.payload.id
-      );
-      state.tasks.splice(index - 1, 1);
+      const index = state.tasks.findIndex((task) => task.id === action.payload);
+      if (index !== -1) {
+        state.tasks.splice(index, 1);
+      }
     },
   },
 });
