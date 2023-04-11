@@ -9,14 +9,16 @@ import moment from "moment";
 
 const Todos = () => {
   const todo = useSelector((state) => state.todo.tasks);
-  const [status, setStatus] = useState("active");
+  const [status, setStatus] = useState(false);
+  // const taskCompleted = todo.filter((task) => task.completed == true);
+  // const taskActive = todo.filter((task) => task.completed == false);
+
   const changeStatusOn = (status) => {
     setStatus(status);
   };
 
   let currentDayWeek = moment().format("dddd");
   let currentMMDYY = moment().format("MMM Do YY");
-
   return (
     <div className={style.container}>
       <h1>
@@ -25,7 +27,7 @@ const Todos = () => {
       <h3>{`${currentDayWeek}   ${currentMMDYY}`}</h3>
       <SetTask />
       <DescTask changeStatusOn={changeStatusOn} />
-      {/* {todo.map((i, o) => (
+      {todo.map((i, o) => (
         <div key={o}>
           <ItemTask
             id={i.id}
@@ -34,7 +36,7 @@ const Todos = () => {
             status={status}
           />
         </div>
-      ))} */}
+      ))}
       <TotalTask />
     </div>
   );
