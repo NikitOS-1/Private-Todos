@@ -9,11 +9,9 @@ import moment from "moment";
 const Todos = () => {
   const todo = useSelector((state) => state.todo.tasks);
 
-  const taskCompleted = todo.filter((task) => task.completed == true);
-  const taskActive = todo.filter((task) => task.completed == false);
-
   let currentDayWeek = moment().format("dddd");
   let currentMMDYY = moment().format("MMM Do YY");
+
   return (
     <div className={style.container}>
       <h1>
