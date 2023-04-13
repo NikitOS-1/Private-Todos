@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <main style={{ width: "100%" }}>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/" element={<HomePage />} /> */}
         <Route path="/login" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
       </Routes>
