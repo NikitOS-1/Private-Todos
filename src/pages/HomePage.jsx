@@ -17,6 +17,7 @@ const HomePage = () => {
         setEmail(user.email);
         setId(user.uid);
         setName(user.displayName);
+        setName(user.displayName);
       } else {
         navigate("/login");
       }
