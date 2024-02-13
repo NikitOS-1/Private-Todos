@@ -53,7 +53,8 @@ const FormUP = ({ error, clickHandler }) => {
         SIGN UP
       </Button>
       <div className={style.signup}>
-        <span>IF YOU HAVE AN ACCOUNT?</span> <Link to="/login">SIGN IN</Link>
+        <span>IF YOU HAVE AN ACCOUNT YET?</span>{" "}
+        <Link to="/login">SIGN IN</Link>
       </div>
     </div>
   );
