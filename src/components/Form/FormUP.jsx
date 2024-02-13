@@ -42,9 +42,7 @@ const FormUP = ({ error, clickHandler }) => {
         value={currentPass}
         onChange={(e) => setCurrentPass(e.target.value)}
       />
-      <p style={{ color: "red", fontWeight: "900" }}>
-        {!error ? "" : "You entered incorrect information"}
-      </p>
+      <p style={{ color: "red", fontWeight: "900" }}>{!error ? "" : error}</p>
       <Button
         variant="outlined"
         className={style.btn}
@@ -53,8 +51,7 @@ const FormUP = ({ error, clickHandler }) => {
         SIGN UP
       </Button>
       <div className={style.signup}>
-        <span>IF YOU HAVE AN ACCOUNT YET?</span>{" "}
-        <Link to="/login">SIGN IN</Link>
+        <span>IF YOU HAVE AN ACCOUNT?</span> <Link to="/login">SIGN IN</Link>
       </div>
     </div>
   );
