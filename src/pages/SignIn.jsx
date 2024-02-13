@@ -29,7 +29,7 @@ const SignIn = () => {
         navigate("/login");
       }
     });
-  }, [auth]);
+  }, [auth, navigate]);
 
   return (
     <div>

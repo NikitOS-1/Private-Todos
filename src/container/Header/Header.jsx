@@ -23,7 +23,7 @@ const Header = () => {
     } else {
       dispatch(isDay(true));
     }
-  }, []);
+  }, [dispatch]);
 
   const exit = () => {
     signOut(auth);
